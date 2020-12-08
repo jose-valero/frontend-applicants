@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import UserItem from './UserItem';
 import UserContext from '../reducers/userContext';
 import Spinner from './Spinner';
+import { transoformData } from '../utis/dataStructure';
 
 const Users = () => {
   const userContext = useContext(UserContext);
@@ -17,7 +18,8 @@ const Users = () => {
   } else {
     return (
       <div style={userStyle}>
-        {users.map((user) => (
+        {console.log('dataStructure', transoformData(users))}
+        {transoformData(users).map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>

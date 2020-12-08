@@ -20,8 +20,9 @@ const Search = () => {
       return null;
     }
     setText('');
-
     userContext[api](text);
+    
+    // userContext.searchUsers(text)
   };
 
   const searchOnChange = (e) => {
